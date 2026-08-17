@@ -1,0 +1,10 @@
+# GitHub About Settings
+
+## Description
+躊躇してないで、とにかく作ってみよう。 AI開発初心者が「こんなの作って」から実際の開発を始めるための無料Webアシスタント。
+
+## Website
+https://tk030-lotto.github.io/AI-/
+
+## Topics
+ai, ai-development, ai-assistant, vibe-coding, beginner, developer-tools, github-pages, javascript, oss
