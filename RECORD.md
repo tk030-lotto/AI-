@@ -65,18 +65,9 @@
   - `docs: GitHub Pages公開URLをREADMEおよびRECORDに追記`
 - **進捗ステータス**: 本番公開完了。
 
-### 2026-08-17: README.md への MIT ライセンス条項・著作権全文の明記
+### 2026-08-17: 公式 note リリース告知記事の公開完了
 - **変更概要**:
-  - プロトコル標準手順に完全準拠し、`README.md` に「5. ライセンス (License)」項目を新設。
-  - 著作権表示 `Copyright (c) 2026 tk030` および MIT License の正式な条項全文を明記。
-- **関連コミット**:
-  - `docs: README.mdにMITライセンス条項全文と著作権表示を追記`
-- **進捗ステータス**: 全手順・ドキュメント完備。
-
-### 2026-08-17: GitHub リポジトリ About 欄の設定完了
-- **変更概要**:
-  - リポジトリの Description（「躊躇してないで、とにかく作ってみよう。 AI開発初心者が「こんなの作って」から実際の開発を始めるための無料Webアシスタント。」）、Homepage URL、Topics 9件（`ai`, `ai-development`, `ai-assistant`, `vibe-coding`, `beginner`, `developer-tools`, `github-pages`, `javascript`, `oss`）を設定。
-  - 設定内容を `GitHub_About_Settings.txt` として永続保存。
-- **関連コミット**:
-  - `docs: GitHub About設定の適用と設定ファイル追加`
-- **進捗ステータス**: プロジェクト公開環境整備完了。全ステップ100%。
+  - note公式記事「躊躇してないで、とにかく作ってみよう。AI開発アシスタントを作りました」が正式公開。
+  - 記事URL: `https://note.com/zero_ai_dev/n/n6afc17926844`
+  - デモGIFアニメーション、GitHub Pages公開リンク、OSSリポジトリ情報を含めた全導線が開通。
+- **進捗ステータス**: プロジェクトローンチ・告知完了。全工程完遂。
