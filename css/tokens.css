@@ -1,0 +1,74 @@
+/* ==========================================================================
+   AI開発アシスタント - デザイントークン & リセット (tokens.css)
+   プロジェクト統計ツール デザインシステム準拠
+   ========================================================================== */
+
+:root {
+  --bg-app: #09090b;
+  --bg-card: #121215;
+  --bg-card-hover: #18181c;
+  --bg-inset: #050506;
+  --border-color: #27272a;
+  --border-color-hover: #3f3f46;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent-blue: #3b82f6;
+  --accent-blue-btn: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-purple: #8b5cf6;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color-hover);
+}
+
+/* Layout Utilities */
+.app-container {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+  flex: 1;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
