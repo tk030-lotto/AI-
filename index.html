@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>躊躇してないで、とにかく作ってみよう。- AI開発アシスタント</title>
+  <meta name="description" content="AIを使ってソフトウェアを作ってみたい人のための無料AI開発アシスタントツール。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <h1 class="brand-title">躊躇してないで、とにかく作ってみよう。</h1>
+        <span class="brand-badge">AI Assistant</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="step-indicator">
+        <span id="stepName">Step 1: ようこそ</span>
+        <span id="stepCounter">1 / 9</span>
+      </div>
+    </header>
+
+    <!-- Main Content Screens -->
+    <main id="appMain">
+      <!-- 1. Welcome Screen -->
+      <section class="screen active" id="screen-welcome">
+        <div class="card">
+          <div class="card-title">AI開発をはじめよう</div>
+          <div class="card-subtitle">AIで作ってみたいなら、まず一個作ってみましょう。</div>
+          <div class="quote-box">
+            細かな仕様を考える必要はありません。<br>
+            <strong>「こんなの作って」</strong> から始めます。
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin-top:12px;">
+            スマートフォンを案内画面（2画面目）として使い、PCのGoogle Antigravity IDEで実際の開発を進めます。
+          </p>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-welcome-start">始める</button>
+        </div>
+      </section>
+
+      <!-- 2. Setup Screen -->
+      <section class="screen" id="screen-setup">
+        <div class="card">
+          <div class="card-title">PCでAntigravity IDEを準備</div>
+          <div class="card-subtitle">実際のソフトウェア作成にはPCとGoogle Antigravity IDEを使用します。</div>
+          
+          <div class="guide-step-list">
+            <div class="guide-step-item">
+              <span class="guide-step-num">1</span>
+              <div class="guide-step-content">
+                <h4>公式サイトへアクセス</h4>
+                <p>PCブラウザで Google Antigravity 公式サイトを開きます。</p>
+              </div>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-num">2</span>
+              <div class="guide-step-content">
+                <h4>ダウンロード＆インストール</h4>
+                <p>Windows版インストーラーをDLして実行します。</p>
+              </div>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-num">3</span>
+              <div class="guide-step-content">
+                <h4>無料利用枠でスタート</h4>
+                <p>初期セットアップを行い、無料枠の範囲で最初の1個を作ります。</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top:8px;">
+            🔗 Antigravity 公式サイトを開く
+          </a>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-setup-next">準備完了！次へ進む</button>
+          <button type="button" class="btn btn-secondary" data-nav="welcome">戻る</button>
+        </div>
+      </section>
+
+      <!-- 3. Create Screen -->
+      <section class="screen" id="screen-create">
+        <div class="card">
+          <div class="card-title">何を作ってみたいですか？</div>
+          <div class="card-subtitle">「こんなの作って」で大丈夫です。細かな仕様は不要です。</div>
+          <div class="form-group">
+            <label class="form-label" for="userIdeaInput">作りたいもの・アイデア</label>
+            <textarea class="form-control" id="userIdeaInput" rows="4" placeholder="例: 指定したフォルダのファイル名を一覧表示するツールを作って"></textarea>
+          </div>
+          <div class="card-subtitle" style="margin-bottom:8px; font-weight:600;">思いつかないときはサンプルから選ぶ：</div>
+          <div class="sample-grid">
+            <button type="button" class="sample-chip" data-sample="ファイル名一括変更ツールを作って。指定したフォルダ内の複数ファイルの名前を一括で連番や接頭辞付きに変更できるようにして。">
+              <span>ファイル名一括変更ツール</span>
+              <span class="sample-chip-tag">Sample 1</span>
+            </button>
+            <button type="button" class="sample-chip" data-sample="フォルダ内容一覧ツールを作って。フォルダ内のファイルやサブフォルダの階層構造とサイズを一覧表示してテキストで書き出せるようにして。">
+              <span>フォルダ内容一覧ツール</span>
+              <span class="sample-chip-tag">Sample 2</span>
+            </button>
+            <button type="button" class="sample-chip" data-sample="画像一括縮小ツールを作って。複数の画像ファイルをドラッグ＆ドロップで指定したサイズ（横幅や容量）にまとめて縮小変換できるようにして。">
+              <span>画像一括縮小ツール</span>
+              <span class="sample-chip-tag">Sample 3</span>
+            </button>
+            <button type="button" class="sample-chip" data-sample="CSV簡易集計ツールを作って。CSVファイルを読み込んで、指定した列の合計・平均・最大最小を素早く集計してグラフ表示できるようにして。">
+              <span>CSV簡易集計ツール</span>
+              <span class="sample-chip-tag">Sample 4</span>
+            </button>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-create-next">AIに要件定義を依頼する</button>
+          <button type="button" class="btn btn-secondary" data-nav="setup">戻る</button>
+        </div>
+      </section>
+
+      <!-- 4. Prompt Screen -->
+      <section class="screen" id="screen-prompt">
+        <div class="card">
+          <div class="card-title">AIへの依頼文ができました</div>
+          <div class="card-subtitle">下の文章をコピーして、PCの Antigravity IDE のチャット欄に貼り付けて送信してください。</div>
+          <div class="prompt-box" id="promptDisplayBox"></div>
+          <button type="button" class="btn btn-success" id="btn-copy-prompt">📋 依頼文をコピーする</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-prompt-next">送信した！次へ進む</button>
+          <button type="button" class="btn btn-secondary" data-nav="create">内容を修正する</button>
+        </div>
+      </section>
+
+      <!-- 5. Questions Screen -->
+      <section class="screen" id="screen-questions">
+        <div class="card">
+          <div class="card-title">AIからの質問に答えましょう</div>
+          <div class="card-subtitle">AIが内容を整理し、不明な点があればチャットで質問してきます。</div>
+          <div class="quote-box">
+            AIから質問された場合だけ、簡単に回答してください。<br>
+            質問がなければ、AIが自動で整理を進めます。
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-secondary); margin-top:12px;">
+            AIとのやり取りが終わると、AIが <strong>README.md</strong> と <strong>仕様書.md</strong> を作成してくれます。
+          </p>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-questions-next">文書が作成された！次へ進む</button>
+          <button type="button" class="btn btn-secondary" data-nav="prompt">戻る</button>
+        </div>
+      </section>
+
+      <!-- 6. Documents Screen (IDE確認方式) -->
+      <section class="screen" id="screen-documents">
+        <div class="card">
+          <div class="card-title">PCで文書を確認しましょう</div>
+          <div class="card-subtitle">Antigravity IDE で作成された2つの文書を読んで確認します。</div>
+          <div class="guide-step-list">
+            <div class="guide-step-item">
+              <span class="guide-step-num">1</span>
+              <div class="guide-step-content">
+                <h4>README.md を確認</h4>
+                <p>プロジェクトの概要・目的・使い方がイメージ通りか確認します。</p>
+              </div>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-num">2</span>
+              <div class="guide-step-content">
+                <h4>仕様書.md を確認</h4>
+                <p>機能や動作条件に必要なもの・余計なものがないか確認します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-docs-next">確認完了！判定へ進む</button>
+          <button type="button" class="btn btn-secondary" data-nav="questions">戻る</button>
+        </div>
+      </section>
+
+      <!-- 7. Confirm Screen -->
+      <section class="screen" id="screen-confirm">
+        <div class="card">
+          <div class="card-title">これ、自分が作りたかったもの？</div>
+          <div class="card-subtitle">2つの文書の内容を見て、イメージと合っているか判断します。</div>
+          <div class="quote-box">
+            合っていれば、そのまま開発を開始します。<br>
+            違っていれば、AIに「ここを変えて」と伝えて修正してもらいます。
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-success" id="btn-confirm-ok">👍 これで作る（開発開始へ）</button>
+          <button type="button" class="btn btn-secondary" id="btn-confirm-modify">✏️ 修正する（修正指示を作る）</button>
+        </div>
+      </section>
+
+      <!-- 8. Revision Screen -->
+      <section class="screen" id="screen-revision">
+        <div class="card">
+          <div class="card-title">修正したい内容を入力</div>
+          <div class="card-subtitle">どこを変えたいか簡単に入力してください。</div>
+          <div class="form-group">
+            <label class="form-label" for="revisionInput">修正要望</label>
+            <textarea class="form-control" id="revisionInput" rows="3" placeholder="例: 削除機能はいらない、画面をもっとシンプルにして"></textarea>
+          </div>
+          <button type="button" class="btn btn-secondary" id="btn-generate-revision">修正用プロンプトを生成</button>
+          <div class="prompt-box" id="revisionPromptBox" style="display:none; margin-top:12px;"></div>
+          <button type="button" class="btn btn-success" id="btn-copy-revision" style="display:none; margin-top:8px;">📋 修正指示をコピーする</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-revision-done">修正送信完了！文書確認へ戻る</button>
+          <button type="button" class="btn btn-secondary" data-nav="confirm">戻る</button>
+        </div>
+      </section>
+
+      <!-- 9. Start Screen -->
+      <section class="screen" id="screen-start">
+        <div class="card">
+          <div class="card-title">いよいよ開発開始です！🎉</div>
+          <div class="card-subtitle">Antigravity IDE でAIに実装を依頼しましょう。</div>
+          <div class="guide-step-list">
+            <div class="guide-step-item">
+              <span class="guide-step-num">1</span>
+              <div class="guide-step-content">
+                <h4>開発指示を送信</h4>
+                <p>PCのAntigravity IDEのチャット欄に「<strong>この仕様書の内容で開発を開始してください</strong>」と送信します。</p>
+              </div>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-num">2</span>
+              <div class="guide-step-content">
+                <h4>AIがコードを生成</h4>
+                <p>AIがファイルの作成やコードの実装を自動で進めます。</p>
+              </div>
+            </div>
+            <div class="guide-step-item">
+              <span class="guide-step-num">3</span>
+              <div class="guide-step-content">
+                <h4>動かして確認！</h4>
+                <p>できあがったツールを実際に動かして体験してみましょう。</p>
+              </div>
+            </div>
+          </div>
+          <div class="quote-box" style="border-left-color: var(--accent-emerald);">
+            <strong>躊躇してないで、とにかく作ってみよう。</strong><br>
+            最初の一歩を踏み出せました！作りながら覚えていけば大丈夫です。
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="btn-restart">最初から別のツールを作る</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>© 2026 躊躇してないで、とにかく作ってみよう。 - AI開発アシスタント (MIT License)</p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="appToast">
+    <span>📋 クリップボードにコピーしました</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/prompt.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
