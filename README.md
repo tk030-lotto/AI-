@@ -56,6 +56,7 @@
 
 ## 4. 公開形態
 
-- **ホスティング**: GitHub Pages
-- **利用料金**: 無料（アカウント登録不要）
+- **Webアプリ公開URL**: **[https://tk030-lotto.github.io/AI-/](https://tk030-lotto.github.io/AI-/)**
+- **ホスティング**: GitHub Pages (無料 / インストール不要 / スマホ即時利用対応)
+- **ソースコード**: [GitHub Repository (OSS)](https://github.com/tk030-lotto/AI-)
 - **ライセンス**: [MIT License](LICENSE)
