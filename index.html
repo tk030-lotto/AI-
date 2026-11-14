@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>躊躇してないで、とにかく作ってみよう。- AI開発アシスタント</title>
   <meta name="description" content="AIを使ってソフトウェアを作ってみたい人のための無料AI開発アシスタントツール。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
     </header>
 
     <!-- Main Content Screens -->
-    <main id="appMain">
+    <main>
       <!-- 1. Welcome Screen -->
       <section class="screen active" id="screen-welcome">
         <div class="card">
@@ -102,6 +102,12 @@
           <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top:12px;">
             🔗 Antigravity 公式サイトを開く
           </a>
+
+          <div class="quote-box" style="margin-top:12px;">
+            ❓ <strong>画面が説明と違う場合は</strong><br>
+            アップデートなどで表示が説明と異なる場合は、Antigravity のチャット欄に次の文を貼り付けて現在の画面の状態を伝えると、次の操作を案内してもらえます。<br>
+            「いま Antigravity の画面が、案内の説明と違っています。現在の画面で、次に何をすればよいか教えてください。」
+          </div>
         </div>
         <div class="btn-group">
           <button type="button" class="btn btn-primary" id="btn-setup-next">準備完了！次へ進む</button>
@@ -164,7 +170,7 @@
           <div class="card-title">AIからの質問に答えましょう</div>
           <div class="card-subtitle">AIが内容を整理し、不明な点があればチャットで質問してきます。</div>
           <div class="quote-box">
-            AIから質問された場合だけ、簡単に回答してください。<br>
+            AIから質問された場合だけ、回答してください。<br>
             質問がなければ、AIが自動で整理を進めます。
           </div>
           <p style="font-size:0.875rem; color:var(--text-secondary); margin-top:12px;">
@@ -225,7 +231,7 @@
       <section class="screen" id="screen-revision">
         <div class="card">
           <div class="card-title">修正したい内容を入力</div>
-          <div class="card-subtitle">どこを変えたいか簡単に入力してください。</div>
+          <div class="card-subtitle">どこを変えたいか入力してください。</div>
           <div class="form-group">
             <label class="form-label" for="revisionInput">修正要望</label>
             <textarea class="form-control" id="revisionInput" rows="3" placeholder="例: 削除機能はいらない、画面をもっとシンプルにして"></textarea>

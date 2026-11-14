@@ -131,6 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navigateTo(startScreen);
   }
 
+  // ストレージ操作の失敗通知を設定
+  AppStorage.setErrorHandler((action) => {
+    const messages = {
+      load: '⚠️ 保存データの読み込みに失敗しました',
+      save: '⚠️ 状態の保存に失敗しました',
+      clear: '⚠️ 保存データの初期化に失敗しました'
+    };
+    showToast(messages[action] || '⚠️ ストレージ操作に失敗しました');
+  });
+
   // =========================================================================
   // イベントリスナーの設定
   // =========================================================================
@@ -143,6 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Setup -> Create
   document.getElementById('btn-setup-next')?.addEventListener('click', () => {
     navigateTo('create');
+  });
+
+  // 3. Create: 入力途中の内容を保存
+  userIdeaInput?.addEventListener('input', () => {
+    AppStorage.saveState({ userIdea: userIdeaInput.value });
   });
 
   // 3. Create: サンプル選択
@@ -160,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-create-next')?.addEventListener('click', () => {
     const idea = (userIdeaInput?.value || '').trim();
     if (!idea) {
-      alert('作りたいものを入力するか、サンプルを選択してください。');
+      showToast('作りたいものを入力するか、サンプルを選択してください。');
       userIdeaInput?.focus();
       return;
     }
@@ -209,11 +224,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navigateTo('revision');
   });
 
+  // 8. Revision: 入力途中の修正要望を保存
+  revisionInput?.addEventListener('input', () => {
+    AppStorage.saveState({ revisionIdea: revisionInput.value });
+  });
+
   // 8. Revision: 修正プロンプト生成
   document.getElementById('btn-generate-revision')?.addEventListener('click', () => {
     const rev = (revisionInput?.value || '').trim();
     if (!rev) {
-      alert('修正したい内容を入力してください。');
+      showToast('修正したい内容を入力してください。');
       revisionInput?.focus();
       return;
     }

@@ -14,8 +14,9 @@
 - **スマートフォン ＋ PC の2画面構成**:
   - **スマートフォン**: 本ツールを開き、手順確認・プロンプト生成・文書確認のガイド（2画面目）として利用。
   - **PC**: Google Antigravity IDE を起動し、実際のコーディング・開発を実行。
-- **Zero-Dependency & 高速動作**: 外部ライブラリに依存しない Pure HTML/CSS/JS 構成。
+- **外部ライブラリ非依存（Pure HTML/CSS/JS 構成）**: JavaScript ライブラリには依存せず、HTML / CSS / JavaScript のみで構成されています（表示用フォントのみ Google Fonts から取得します）。
 - **LocalStorage 状態保持**: ブラウザを閉じても入力内容と進行状況が保持されます。
+- **外部へのデータ送信なし**: 入力した内容や生成したプロンプトが外部へ送信されることはありません（外部と通信するのはフォントファイルの取得のみです）。
 
 ---
 
@@ -46,9 +47,6 @@
 │   ├── app.js              # 画面遷移エンジン・UI制御
 │   ├── prompt.js           # 要件定義・修正指示プロンプト生成
 │   └── storage.js          # LocalStorage 状態永続化
-├── PROJECT_PLAN.md         # 統合開発計画書
-├── RECORD.md               # 開発記録
-├── SCHEDULE.md             # 開発スケジュール・進行マイルストーン
 └── LICENSE                 # MIT License
 ```
 
@@ -56,7 +54,7 @@
 
 ## 4. 公開形態
 
-- **Webアプリ公開URL**: **[https://tk030-lotto.github.io/AI-/](https://tk030-lotto.github.io/AI-/)**
+- **Webアプリ公開URL**: **[https://zero-dev.jp/AI-/](https://zero-dev.jp/AI-/)**
 - **ホスティング**: GitHub Pages (無料 / インストール不要 / スマホ即時利用対応)
 - **ソースコード**: [GitHub Repository (OSS)](https://github.com/tk030-lotto/AI-)
 - **ライセンス**: [MIT License](LICENSE)
